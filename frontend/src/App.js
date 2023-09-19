@@ -12,7 +12,7 @@ function App() {
   const [keeperlist, setKeeperlist] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/getAll')
+    axios.get('http://localhost:3001/api/getAll' || 'https://quick-memo.onrender.com')
       .then(res => {
         setKeeperlist(res.data); // Update keeperlist with the data received from the server
       })
