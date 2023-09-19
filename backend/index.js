@@ -5,7 +5,10 @@ import mongoose from "mongoose";
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3001", "https://quick-memo-static.onrender.com"],
+}));
 
 mongoose
   .connect(process.env.MONGODB_URI || 'mongodb+srv://root:root@cluster0.cb98oei.mongodb.net/?retryWrites=true&w=majority', {
