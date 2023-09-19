@@ -111,12 +111,13 @@ app.post("/api/delete", async (req, res) => {
   }
 });
 
+const port = process.env.PORT || 3001;
 
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: "Something went wrong" });
 });
 
-app.listen(3001, () => {
+app.listen(port, () => {
   console.log("Backend created at http://localhost:3001");
 });
